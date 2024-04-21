@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Linkist</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <header class="border-b mb-">
+            <div class="container mx-auto flex flex-col items-center justify-between flex-wrap px-10 py-5 md:flex-row">
+                <a class="flex text-xl  font-bold text-lg items-center text-gray-900 mb-4 md:mb-0"
+                   href="{% url 'link-list' %}">
+                    <p>🔗 Linkist</p>
+                </a>
+                {% comment %} <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
+                    <a href="{% url 'link-list' %}" class="mr-5 hover:text-gray-900">My Links</a>
+                  </nav>
+                {% endcomment %}
+                <a href="{%  url 'link-create' %}">
+                    <button class="inline-flex items-center bg-slate-900 hover:bg-slate-900/90 border-0 py-2 px-4 focus:outline-none hover:bg-indigo-400 rounded-lg text-base text-white mt-4 md:mt-0">
+                        Add Link
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             class="h-5 w-5"
+                             viewBox="0 0 20 20"
+                             fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd" />
+                        </svg>
+                    </button>
+                </a>
+            </div>
+        </header>
+        {% comment %} <div class="container mx-auto"> {% endcomment %}
+        <div class="sm:w-3/4 mx-auto w-full sm:p-10">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        {% comment %} </div> {% endcomment %}
+    </body>
+</html>

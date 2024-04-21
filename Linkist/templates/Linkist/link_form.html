@@ -1,0 +1,13 @@
+{% extends "Linkist/_base.html" %}
+{% load tailwind_filters %}
+{% block content %}
+    <h1 class="text-3xl font-semibold text-slate-900">Link Create Form</h1>
+    <hr class="my-3">
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit"
+               value="Create Link"
+               class="bg-slate-900 text-white px-6 py-3 mt-4  hover:bg-slate-900/90 hover:cursor-pointer rounded-xl">
+    </form>
+{% endblock content %}

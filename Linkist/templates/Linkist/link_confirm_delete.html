@@ -1,0 +1,15 @@
+{% extends "Linkist/_base.html" %}
+{% block content %}
+    <h1 class='text-xl font-semibold text-slate-900'>Are are sure, You want to delete this Link?</h1>
+    <ul>
+        <li>{{ link.title }}</li>
+        <li>{{ link.url }}</li>
+    </ul>
+    <hr class="my-8">
+    <form action="" method="POST">
+        {% csrf_token %}
+        <input type="submit"
+               value="Delete"
+               class="bg-red-500 py-2 text-white px-5 hover:cursor-pointer hover:bg-red-400 rounded-lg">
+    </form>
+{% endblock content %}
